@@ -29,4 +29,30 @@ To divide FICO scores into **10 optimal buckets** that:
 - **Boundary Recovery:** Backtraces from optimal solution to extract final FICO score cutoffs
 
 ## Sample Output
+Final optimized log likelihood: 1034.6281
+Optimal Bucket Boundaries: [300, 551, 589, 620, 652, 681, 708, 734, 757, 779, 850]
+
+This result means the FICO score range of 300–850 is optimally split at those points to differentiate borrower risk based on the data.
+
+## Files
+
+- `fico_bucket_quantization.py`: Full implementation including data loading, model logic, and output
+- `ref data.csv`: Synthetic dataset with `fico_score` and `default` fields
+
+## Use Cases
+
+- Risk modeling for credit cards, loans, mortgages
+- Scorecard design and explainability
+- Regulatory reporting (bucketed PD/EL segmentation)
+
+## Assumptions
+
+- Bucket count (r) is set to 10 — can be changed in the code
+- FICO scores range from 300 to 850 (standard U.S. convention)
+- All data is synthetic and used solely for educational purposes
+
+## Disclaimer
+
+> This is an independently developed project using synthetic data. The methodology reflects statistical concepts used in real-world credit risk modeling but is intended for demonstration only.
+
 
